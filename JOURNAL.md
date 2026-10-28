@@ -1,6 +1,6 @@
 ---
 title: "OpenTI"
-author: "tfickweiler"
+author: "thijmen.fickweiler"
 description: "A fully open source replacement of the TI-84 Plus CE-T mainboard based on the ESP32"
 created_at: "2026-10-24"
 ---
@@ -23,4 +23,18 @@ I've already made the battery management for the original li-ion of the TI-84 wi
 ![devlog2_image](devlog_images/devlog2.jpeg)
 **Total time spent: 1.5 hours**
 
+# October 28: Test fitting of PCB and modifying small defects and silicone switch pads design and placement on PCB
 
+First I've printed out the mainboard mockup I designed yesterday. The first version had an offset on some of the button pads and the mounting holes of some were a bit offset too. Then I redesigned the few flaws and it fit perfectly now. Since I then knew the position of the silicone switch mat pads I could design the sort of fins as the button pads and place them around the PCB layout to later connect the pads themself. Also I have given each button pad their own net-name following what is said on the button of the TI84 Plus CE-T. 
+
+![devlog3_image](devlog_images/devlog3.png)
+**Total time spent: 2.5 hours**
+
+Updated the schematic by adding GPIO expanders, finalizing the buck converter design, adding the screen connector and ESP32 connections, integrating a right-angle RGB LED, and adding charging detection to the ESP32.
+
+# October 28: Worked on the schematic and added nearly all last features
+
+I went and worked on nearly all the parts of the schematic that needed finishing. I've finished the: GPIO expanders (for the silicone mat switches) except the connection to the nets, the buck/boost converter to get a stable 3.3V from the battery, also the charging circuit is now done with charging detection to the ESP32 with a GPIO connection, integrating of the right-angle RGB LED for status of the mainboard visible from the outside and finally the screen connection over SPI with backlight control.
+
+![devlog4_image](devlog_images/devlog4.png)
+**Total time spent: 2.25 hours**
