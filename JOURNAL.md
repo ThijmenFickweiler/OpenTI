@@ -45,3 +45,10 @@ I finished the schematic with the pull-up resistors and other small things. I al
 
 ![devlog5_image](devlog_images/devlog5.png)
 **Total time spent: 2.25 hours**
+
+# October 28: Designing of the 2.8" screen and test fitting it
+
+I've designed the 2.8" screen from LCSC to print it out and test fit it. The idea first was that the flex cable of the screen would fold into the PCB but it was way to short for it. So I am planning to build a daughter-board that converts the SPI and other signals to a 8 pin connection that I can solder with wires to the mainboard to have that connection while the flex cable can be shorter.
+
+![devlog6_image](devlog_images/devlog6.jpeg)
+**Total time spent: 0.5 hours**
