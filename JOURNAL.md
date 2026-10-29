@@ -38,3 +38,10 @@ I went and worked on nearly all the parts of the schematic that needed finishing
 
 ![devlog4_image](devlog_images/devlog4.png)
 **Total time spent: 2.25 hours**
+
+# October 28: Finished and reviewed the schematic and working on the PCB Layout
+
+I finished the schematic with the pull-up resistors and other small things. I also peer reviewed the entire schematic for any mistakes and fixed a few small ones. Then I moved to the PCB layout where I place all the switch pads already yesterday so I could start for now with routing of the: ESP32, USB-B-Mini connector, PMIC, buck-boost converter, RGB-LED and the battery connection.
+
+![devlog5_image](devlog_images/devlog5.png)
+**Total time spent: 2.25 hours**
