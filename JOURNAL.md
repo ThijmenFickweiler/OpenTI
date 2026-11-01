@@ -72,11 +72,11 @@ First I've planned the best layout with an 90-degree angle from the FPC-connecto
 Finished the PCB design and performed a final review to check component placement, routing, and overall design integrity. Added the silkscreen labels and markings to improve component identification and assembly. Generated the Bill of Materials (BOM) and prepared all required production files. The design is now ready for manufacturing through JLCPCB.
 
 ![devlog9_image](devlog_images/devlog9.jpeg)
-**Total time spent: 1.0 hours**
+**Total time spent: 1.25 hours**
 
 # November 1: Worked on the last silkscreen and last checks before finishing
 
 Quickly added some last silkscreen items that I forget like places for type numbers etc. Also regenerated all design files.
 
 ![devlog10_image](devlog_images/devlog10.jpeg)
-**Total time spent: 1.0 hours**
+**Total time spent: 0.5 hours**
