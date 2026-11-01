@@ -52,3 +52,31 @@ I've designed the 2.8" screen from LCSC to print it out and test fit it. The ide
 
 ![devlog6_image](devlog_images/devlog6.jpeg)
 **Total time spent: 0.5 hours**
+
+# October 29: Continued working on the PCB layout, making several adjustments to component placement and routing
+
+Replaced some electrolytic capacitors with shorter alternatives because the original components exceeded the available height constraints. Continued routing the button connections and GPIO expanders, and completed the routing of the daughterboard connections. Also made further progress towards completing the overall PCB layout.
+
+![devlog8_image](devlog_images/devlog8.jpeg)
+**Total time spent: 2.5 hours**
+
+# October 30: Preparing the layout and the board-outline and fitting it in the case
+
+First I've planned the best layout with an 90-degree angle from the FPC-connector to the off-board wires. I also 3D-printed the board to test fit it and make sure everything is lined up.
+
+![devlog7_image](devlog_images/devlog7.jpeg)
+**Total time spent: 1.0 hours**
+
+# November 1: Finished the final routes and checks before creating production files
+
+Finished the PCB design and performed a final review to check component placement, routing, and overall design integrity. Added the silkscreen labels and markings to improve component identification and assembly. Generated the Bill of Materials (BOM) and prepared all required production files. The design is now ready for manufacturing through JLCPCB.
+
+![devlog9_image](devlog_images/devlog9.jpeg)
+**Total time spent: 1.0 hours**
+
+# November 1: Worked on the last silkscreen and last checks before finishing
+
+Quickly added some last silkscreen items that I forget like places for type numbers etc. Also regenerated all design files.
+
+![devlog10_image](devlog_images/devlog10.jpeg)
+**Total time spent: 1.0 hours**
