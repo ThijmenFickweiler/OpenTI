@@ -10,21 +10,36 @@ The project was created to explore whether the TI-84 Plus CE-T could be given a 
 
 ---
 
+## Repository Structure
+
+```text
+hardware/
+|-- easyeda/          EasyEDA PCB and schematic source files
+|-- manufacturing/    Gerber package and Bill of Materials
+`-- mechanical/       Mechanical DXF drawing
+firmware/             ESP32-S3 firmware foundation sketch
+images/               Gallery renders and development journal photos
+JOURNAL.md            Development journal
+LICENSE               MIT license
+```
+
+---
+
 ## Gallery
 
 ### PCB Design
 
-![OpenTI PCB Design](OpenTI-PCB-Image.png)
+![OpenTI PCB Design](images/OpenTI-PCB-Image.png)
 
 ### Schematic
 
-![OpenTI Schematic](OpenTI-Schematic-Image.png)
+![OpenTI Schematic](images/OpenTI-Schematic-Image.png)
 
 ### PCB Renders
 
 | Front | Back |
 |---|---|
-| ![PCB Front](PCB-Front.png) | ![PCB Back](PCB-Back.png) |
+| ![PCB Front](images/PCB-Front.png) | ![PCB Back](images/PCB-Back.png) |
 
 ---
 
@@ -71,7 +86,7 @@ The ESP32-S3 module is the central component of the motherboard and provides the
 
 The complete Bill of Materials is available as a CSV file:
 
-**[OpenTI-84-BOM.csv](OpenTI-84-BOM.csv)**
+**[OpenTI-84-BOM.csv](hardware/manufacturing/OpenTI-84-BOM.csv)**
 
 The BOM contains the component information needed to source and assemble the PCB. Components were selected with LCSC availability in mind.
 
@@ -85,11 +100,11 @@ All hardware design files are available in this repository.
 
 | File | Description |
 |---|---|
-| [OpenTI-84-EasyEDA-PCB.json](OpenTI-84-EasyEDA-PCB.json) | EasyEDA PCB design |
-| [OpenTI-84-EasyEDA-SCH.json](OpenTI-84-EasyEDA-SCH.json) | EasyEDA schematic |
-| [OpenTI-84-Gerber.zip](OpenTI-84-Gerber.zip) | PCB manufacturing Gerber files |
-| [OpenTI DXF REV2.dxf](OpenTI%20DXF%20REV2.dxf) | Mechanical DXF drawing |
-| [OpenTI-84-BOM.csv](OpenTI-84-BOM.csv) | Bill of Materials |
+| [OpenTI-84-EasyEDA-PCB.json](hardware/easyeda/OpenTI-84-EasyEDA-PCB.json) | EasyEDA PCB design |
+| [OpenTI-84-EasyEDA-SCH.json](hardware/easyeda/OpenTI-84-EasyEDA-SCH.json) | EasyEDA schematic |
+| [OpenTI-84-Gerber.zip](hardware/manufacturing/OpenTI-84-Gerber.zip) | PCB manufacturing Gerber files |
+| [OpenTI-84-DXF-REV2.dxf](hardware/mechanical/OpenTI-84-DXF-REV2.dxf) | Mechanical DXF drawing |
+| [OpenTI-84-BOM.csv](hardware/manufacturing/OpenTI-84-BOM.csv) | Bill of Materials |
 
 The PCB manufacturing files were prepared for production through JLCPCB.
 

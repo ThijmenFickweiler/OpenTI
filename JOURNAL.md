@@ -11,7 +11,7 @@ By measuring and comparing to a disassembled TI-84+ CE-T for the layout of parts
 
 Also a really important feature for this project is that the silicone switch mat compatible with my mainboard to give it the same feel and compatibility between the original mainboard and the custom one.
 
-![devlog1_image](devlog_images/devlog1.png)
+![devlog1_image](images/journal/devlog1.png)
 **Total time spent: 3 hours**
 
 # October 27: Started component choosing and working on the schematic for the mainboard
@@ -20,14 +20,14 @@ I have made a start on the schematic for the mainboard while also looking for su
 
 I've already made the battery management for the original li-ion of the TI-84 with a PMIC (power management integrated circuit) and for that i also required a buck-boost to get a stable 3.3V out of it. The buck-boost I've finished due to a very simple to use ic. The ESP32-S3 module also has seen some progress on connecting it to the power and a few reset buttons.
 
-![devlog2_image](devlog_images/devlog2.jpeg)
+![devlog2_image](images/journal/devlog2.jpeg)
 **Total time spent: 1.5 hours**
 
 # October 28: Test fitting of PCB and modifying small defects and silicone switch pads design and placement on PCB
 
 First I've printed out the mainboard mockup I designed yesterday. The first version had an offset on some of the button pads and the mounting holes of some were a bit offset too. Then I redesigned the few flaws and it fit perfectly now. Since I then knew the position of the silicone switch mat pads I could design the sort of fins as the button pads and place them around the PCB layout to later connect the pads themself. Also I have given each button pad their own net-name following what is said on the button of the TI84 Plus CE-T. 
 
-![devlog3_image](devlog_images/devlog3.png)
+![devlog3_image](images/journal/devlog3.png)
 **Total time spent: 2.5 hours**
 
 Updated the schematic by adding GPIO expanders, finalizing the buck converter design, adding the screen connector and ESP32 connections, integrating a right-angle RGB LED, and adding charging detection to the ESP32.
@@ -36,47 +36,47 @@ Updated the schematic by adding GPIO expanders, finalizing the buck converter de
 
 I went and worked on nearly all the parts of the schematic that needed finishing. I've finished the: GPIO expanders (for the silicone mat switches) except the connection to the nets, the buck/boost converter to get a stable 3.3V from the battery, also the charging circuit is now done with charging detection to the ESP32 with a GPIO connection, integrating of the right-angle RGB LED for status of the mainboard visible from the outside and finally the screen connection over SPI with backlight control.
 
-![devlog4_image](devlog_images/devlog4.png)
+![devlog4_image](images/journal/devlog4.png)
 **Total time spent: 2.25 hours**
 
 # October 28: Finished and reviewed the schematic and working on the PCB Layout
 
 I finished the schematic with the pull-up resistors and other small things. I also peer reviewed the entire schematic for any mistakes and fixed a few small ones. Then I moved to the PCB layout where I place all the switch pads already yesterday so I could start for now with routing of the: ESP32, USB-B-Mini connector, PMIC, buck-boost converter, RGB-LED and the battery connection.
 
-![devlog5_image](devlog_images/devlog5.png)
+![devlog5_image](images/journal/devlog5.png)
 **Total time spent: 2.25 hours**
 
 # October 28: Designing of the 2.8" screen and test fitting it
 
 I've designed the 2.8" screen from LCSC to print it out and test fit it. The idea first was that the flex cable of the screen would fold into the PCB but it was way to short for it. So I am planning to build a daughter-board that converts the SPI and other signals to a 8 pin connection that I can solder with wires to the mainboard to have that connection while the flex cable can be shorter.
 
-![devlog6_image](devlog_images/devlog6.jpeg)
+![devlog6_image](images/journal/devlog6.jpeg)
 **Total time spent: 0.5 hours**
 
 # October 29: Continued working on the PCB layout, making several adjustments to component placement and routing
 
 Replaced some electrolytic capacitors with shorter alternatives because the original components exceeded the available height constraints. Continued routing the button connections and GPIO expanders, and completed the routing of the daughterboard connections. Also made further progress towards completing the overall PCB layout.
 
-![devlog8_image](devlog_images/devlog8.jpeg)
+![devlog8_image](images/journal/devlog8.jpeg)
 **Total time spent: 2.5 hours**
 
 # October 30: Preparing the layout and the board-outline and fitting it in the case
 
 First I've planned the best layout with an 90-degree angle from the FPC-connector to the off-board wires. I also 3D-printed the board to test fit it and make sure everything is lined up.
 
-![devlog7_image](devlog_images/devlog7.jpeg)
+![devlog7_image](images/journal/devlog7.jpeg)
 **Total time spent: 1.0 hours**
 
 # November 1: Finished the final routes and checks before creating production files
 
 Finished the PCB design and performed a final review to check component placement, routing, and overall design integrity. Added the silkscreen labels and markings to improve component identification and assembly. Generated the Bill of Materials (BOM) and prepared all required production files. The design is now ready for manufacturing through JLCPCB.
 
-![devlog9_image](devlog_images/devlog9.jpeg)
+![devlog9_image](images/journal/devlog9.jpeg)
 **Total time spent: 1.25 hours**
 
 # November 1: Worked on the last silkscreen and last checks before finishing
 
 Quickly added some last silkscreen items that I forget like places for type numbers etc. Also regenerated all design files.
 
-![devlog10_image](devlog_images/devlog10.jpeg)
+![devlog10_image](images/journal/devlog10.jpeg)
 **Total time spent: 0.5 hours**
