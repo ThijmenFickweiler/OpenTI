@@ -60,6 +60,7 @@ For actually buying all the parts and stuff, you can use the GERBER and the BOM 
 **Make sure that the PCB is 1mm thick else the battery and USB connector won't line up, and make sure it is set to EING and not HASL or any other option for the longevity of your board!!**
 
 | File | Description |
+|---|---|
 | [OpenTI-84-Gerber.zip](pcb/OpenTI-84-Gerber.zip) | PCB manufacturing GERBER files |
 | [OpenTI-84-BOM.csv](OpenTI-84-BOM.csv) | Bill of Materials |
 
