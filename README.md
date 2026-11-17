@@ -1,127 +1,75 @@
 # OpenTI
 
-**An open-source replacement motherboard for the TI-84 Plus CE-T, powered by the ESP32-S3.**
+**An open-source replacement motherboard for the TI-84 Plus CE-T powered by an ESP32-S3.**
 
-OpenTI is a hardware project aiming to replace the original motherboard of the Texas Instruments TI-84 Plus CE-T with a completely custom-designed, open-source PCB. The goal is to preserve compatibility with the original calculator enclosure, display, battery and silicone keypad while replacing the original electronics with a modern ESP32-S3-based design.
+OpenTI is a hardware project aiming to replace the original motherboard of the TI-84 Plus CE-T with a complete replica of the PCB. The goal is to make a custom, fully open replacement to experiment with any features that are available to the calculator, such as way more compute and maybe even raytracing ;)
 
-The project was created to explore whether the TI-84 Plus CE-T could be given a new, more accessible and customizable hardware platform without sacrificing the original calculator's form factor. By making the hardware designs, schematics and manufacturing files publicly available, OpenTI aims to make experimentation, modification and further development possible for everyone.
-
-> **Project status:** PCB design completed and manufacturing files prepared. Hardware assembly and full functional validation are still to be documented.
+Disclaimer: this is NOT a cheating device. I've disabled a few features that are hardware dependent, so trust me, it will take you way more time to get this working for cheating than just studying and getting a good grade :)
 
 ---
 
-## Repository Structure
+## Digital images of the PCB
 
-```text
-hardware/
-|-- easyeda/          EasyEDA PCB and schematic source files
-|-- manufacturing/    Gerber package and Bill of Materials
-`-- mechanical/       Mechanical DXF drawing
-firmware/             ESP32-S3 firmware foundation sketch
-images/               Gallery renders and development journal photos
-JOURNAL.md            Development journal
-LICENSE               MIT license
-```
-
----
-
-## Gallery
-
-### PCB Design
+### PCB Design/layout of the PCB
 
 ![OpenTI PCB Design](images/OpenTI-PCB-Image.png)
 
-### Schematic
+### Schematic of the PCB
 
 ![OpenTI Schematic](images/OpenTI-Schematic-Image.png)
 
-### PCB Renders
+### PCB Screenshots from EasyEDA
 
-| Front | Back |
+| Front of PCB | Back of PCB |
 |---|---|
 | ![PCB Front](images/PCB-Front.png) | ![PCB Back](images/PCB-Back.png) |
 
 ---
 
-## Features and Design Goals
+## Features of the mainboard
 
-- **ESP32-S3:** Modern microcontroller platform serving as the main processing unit.
-- **Original enclosure compatibility:** Designed around the dimensions and mounting positions of the original TI-84 Plus CE-T motherboard.
-- **Original keypad compatibility:** Retains compatibility with the original silicone button membrane using custom-designed PCB contact pads.
-- **Battery management:** Designed to work with the original lithium-ion battery using a dedicated power-management IC.
-- **3.3 V power supply:** Buck-boost conversion provides a stable 3.3 V supply from the battery.
-- **Display connectivity:** SPI interface for connecting the calculator display, including backlight control.
-- **GPIO expansion:** GPIO expanders handle the multiple keypad inputs.
-- **Charging detection:** Battery charging status can be detected by the ESP32.
-- **RGB status LED:** Right-angle RGB LED provides externally visible status indication.
-- **USB connectivity:** Designed around the original USB Mini-B connector position.
-
-## Hardware Design
-
-The motherboard is designed to fit inside the original TI-84 Plus CE-T housing without requiring modifications to the enclosure.
-
-During development, the original calculator was disassembled and measured to determine the exact positions of important components, including the battery connector, USB connector, mounting holes and keypad contacts.
-
-The PCB layout was developed with these mechanical constraints in mind. Physical 3D-printed board mockups were used to verify component positioning, mounting holes and overall fit before finalizing the PCB layout.
-
-### Power Management
-
-The power-management circuitry consists of a dedicated PMIC for battery management and a buck-boost converter to generate a stable 3.3 V supply for the electronics.
-
-### Keypad
-
-The original silicone keypad membrane is intended to remain usable. Custom PCB contact pads were positioned to match the original button locations, with GPIO expanders handling the keypad inputs.
-
-### Display
-
-The design includes an SPI display interface with backlight control. A separate display adapter/daughterboard is planned to accommodate the display's flexible cable and connection requirements.
-
-### Main Controller
-
-The ESP32-S3 module is the central component of the motherboard and provides the processing and GPIO functionality for the replacement hardware.
-
----
+- **ESP32-S3:** an ESP32-S3 (with 16 MB flash) was chosen because it has the compute and I/O required for such an implementation. Also with the 16 MB flash, there is no issue with unoptimized code with assets, etc.
+- **Original enclosure compatibility:** using the original TI-84 Plus CE-T mainboard as a template for this replacement board, there are no (or minimal) modifications required while reusing components like the battery and silicon touch panel.
+- **Battery management:** As said earlier, it is compatible with the original li-ion battery with a voltage divider to measure battery levels.
+- **3.3 V power rail:** A very tiny (and actually very good) buck-boost is used to get a stable 3.3V for the whole system from the battery.
+- **Display connectivity:** A new screen (SPI-based 2.8" TFT LCD) needs to be unfortunately placed in the case due to the incompatible/unknown protocol of the original screen.
+- **Status LED:** A LED visible from the outside from the original LED port shows charging states.
+- **USB connectivity:** Using the same connector as the original, it can still charge with it, but also it has a custom interface to load new binaries, etc.
 
 ## Bill of Materials
 
 The complete Bill of Materials is available as a CSV file:
 
-**[OpenTI-84-BOM.csv](hardware/manufacturing/OpenTI-84-BOM.csv)**
+**[OpenTI-84-BOM.csv](OpenTI-84-BOM.csv)**
 
-The BOM contains the component information needed to source and assemble the PCB. Components were selected with LCSC availability in mind.
-
-For the most accurate component references, quantities and purchasing information, consult the original CSV file.
+The BOM is dropped in for LCSC.com but also can be manually purchased from every major electronics distributor (may need to buy special components like the screen or other stuff separate from other sites when not using LCSC.com)
 
 ---
 
 ## Design Files and Manufacturing
 
-All hardware design files are available in this repository.
+For manufacturing your own board, you can first test fit the mainboard and subboard with the STEP files:
 
 | File | Description |
 |---|---|
-| [OpenTI-84-EasyEDA-PCB.json](hardware/easyeda/OpenTI-84-EasyEDA-PCB.json) | EasyEDA PCB design |
-| [OpenTI-84-EasyEDA-SCH.json](hardware/easyeda/OpenTI-84-EasyEDA-SCH.json) | EasyEDA schematic |
-| [OpenTI-84-Gerber.zip](hardware/manufacturing/OpenTI-84-Gerber.zip) | PCB manufacturing Gerber files |
-| [OpenTI-84-DXF-REV2.dxf](hardware/mechanical/OpenTI-84-DXF-REV2.dxf) | Mechanical DXF drawing |
-| [OpenTI-84-BOM.csv](hardware/manufacturing/OpenTI-84-BOM.csv) | Bill of Materials |
+| [OpenTI-84-EasyEDA-PCB.json](pcb/OpenTI-84-EasyEDA-PCB.json) | EasyEDA PCB design |
+| [OpenTI-84-EasyEDA-SCH.json](pcb/OpenTI-84-EasyEDA-SCH.json) | EasyEDA schematic |
 
-The PCB manufacturing files were prepared for production through JLCPCB.
+For actually buying all the parts and stuff, you can use the GERBER and the BOM to order it.
+
+**Make sure that the PCB is 1mm thick else the battery and USB connector won't line up, and make sure it is set to EING and not HASL or any other option for the longevity of your board!!**
+
+| File | Description |
+| [OpenTI-84-Gerber.zip](pcb/OpenTI-84-Gerber.zip) | PCB manufacturing GERBER files |
+| [OpenTI-84-BOM.csv](OpenTI-84-BOM.csv) | Bill of Materials |
+
+The PCB manufacturing files were prepared for production through JLCPCB but will probably work with other manufacturers.
 
 ---
 
 ## Development Journal
 
-The development process, design decisions and progress updates are documented in the [JOURNAL.md](JOURNAL.md) file.
-
-The journal includes:
-- Mechanical measurements and enclosure compatibility work.
-- Component selection and schematic development.
-- Power-management circuit design.
-- Keypad contact positioning and GPIO expansion.
-- PCB routing and component placement.
-- 3D-printed mechanical fit testing.
-- Final PCB checks and manufacturing preparation.
+The development process and the logging of it are documented in [JOURNAL.md](JOURNAL.md), as per part of Hackclub Forge.
 
 ---
 
